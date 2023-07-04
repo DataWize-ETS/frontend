@@ -4,14 +4,13 @@ import { Tooltip } from '@chakra-ui/react'
 import img from '../../../assets/logo.svg'
 import {Link} from 'react-router-dom'
 
-export default (props) => {
+export default () => {
     return (
         <>
             <img className="supergraphic" />
             <nav className="nav-main">
 
                 <div className='brand'>
-                    {/* <h1 className='logo-title'>VerwalB</h1> */}
                     <img src={img} className='img-logo' alt="" />
                     <ul className='links-brand'>
                        
@@ -22,7 +21,7 @@ export default (props) => {
                 </div>
 
                 <Tooltip label='Sing-in as admin' >
-                    <button><BiSolidUserCircle size={40} /></button>
+                    <button id='admin-button'><BiSolidUserCircle size={40} /></button>
                 </Tooltip>
             </nav>
         </>

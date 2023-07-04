@@ -2,7 +2,7 @@ import { BiLogoInstagramAlt } from 'react-icons/bi'
 import { BsFacebook } from 'react-icons/bs'
 import { ImGoogle3 } from 'react-icons/im'
 import './Footer.css'
-export default (props) => {
+export default () => {
     return (
         <>
             <footer className="footer-main">

@@ -44,4 +44,9 @@
 }
 .img-logo{
     width: 50px;
+    margin-left: 30px;
+}
+
+#admin-button {
+    margin-right: 30px;
 }
