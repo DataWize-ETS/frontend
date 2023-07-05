@@ -15,7 +15,8 @@ export default () => {
                     <ul className='links-brand'>
                        
                         <li><Link to="">Info Requester</Link></li>
-                        <Link to=""><li >Improvements Peeding*adm</li></Link>
+                        <li><Link to="/improvement/new">New Request</Link></li>
+                        <Link to="/improvement/pending"><li >Improvements Peeding*adm</li></Link>
                         
                     </ul>
                 </div>
