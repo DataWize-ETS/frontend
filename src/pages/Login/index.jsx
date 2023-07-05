@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
 import * as C from "./styles";
-import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from '../../contexts/auth'
 import { BiSolidUserCircle } from 'react-icons/bi'
-import perfil from "../../assets/img-login.svg";
+
 import emailIcon from "../../assets/ic_outline-email.png";
 import passw from "../../assets/material-symbols_lock-outline.png";
 
@@ -13,13 +13,14 @@ const Signin = () => {
 
   const [email, setEmail] = useState("");
   const [password, setSenha] = useState("");
+  const { signIn, loadingAuth } = useContext(AuthContext)
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (email === "" || password == "") {
-      toast.error(
-        'Invalid inputs'
-      )
+      toast.warning('Invalid inputs')
+    } else {
+      signIn(email, password)
     }
   };
 
@@ -37,7 +38,7 @@ const Signin = () => {
         <C.Form action="" onSubmit={e => handleLogin(e)}>
 
 
-          <C.email>
+          <C.FormControl>
             <C.labelOne>E-mail</C.labelOne>
             <C.InputGroup>
             <C.Input
@@ -47,10 +48,10 @@ const Signin = () => {
             />
              <img src={emailIcon} className="iconImageEmail" draggable="false"/>
             </C.InputGroup>
-          </C.email>
+          </C.FormControl>
 
 
-          <C.password>
+          <C.FormControl>
             <C.labelOne>Password</C.labelOne>
             <C.InputGroup>
               <C.Input
@@ -60,9 +61,9 @@ const Signin = () => {
               />
               <img src={passw} className="iconImagePass" draggable="false"/>
             </C.InputGroup>
-          </C.password>
+          </C.FormControl>
 
-          <C.Button>LOGIN</C.Button>
+          <C.Button>{loadingAuth ? 'Loading...' : 'Login'}</C.Button>
 
         </C.Form>
       </C.Content>

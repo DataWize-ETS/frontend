@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useState, createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import axios from '../services/api';
 
 export const AuthContext = createContext({})
 
@@ -10,7 +10,7 @@ function AuthProvider({ children }) {
     const [loadingAuth, setLoadingAuth] = useState(false)
     const [loading, setLoading] = useState(true)
     const [storageUser, setStorageUser] = useState([])
-    
+
     const navigate = useNavigate()
 
 
@@ -35,24 +35,31 @@ function AuthProvider({ children }) {
     async function signIn(email, password) {
         setLoadingAuth(true)
 
+        const form_data = new FormData()
+
+        form_data.append("username", email)
+        form_data.append("password", password)
         //Fazer login
-        const response = await axios.post('user/login', { username: email, password })
-        .then(async (value) => {
-             setUser(value)
-             setStorageUser(value)
-             setLoadingAuth(false)
-             toast.success('Bem-vindo(a) de volta!')
-             navigate("/improvement/pending")
-         })
-         .catch((e) => {
-            console.log(e)
-            toast.error('Ops algo deu errado!')
-            setLoadingAuth(false)
-        })
-            
+        const response = await axios.post('/user/login', form_data)
+            .then(async (value) => {
+                const token = value.data.token
+                setUser(value.data.user)
+                setStorageUser(value.data.user)
+                console.log(token)
+                localStorage.setItem("@bearer", token)
+                setLoadingAuth(false)
+                toast.success('Bem-vindo(a) de volta!')
+                navigate("/improvement/pending")
+            })
+            .catch((e) => {
+                console.log(e)
+                toast.error('Ops algo deu errado!')
+                setLoadingAuth(false)
+            })
+
     }
 
-    
+
     // async function signUp(name, email, password) {
     //     setLoadingAuth(true)
 

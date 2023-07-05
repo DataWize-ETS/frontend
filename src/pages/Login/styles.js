@@ -17,7 +17,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-width: 350px;
+  min-width: 520px;
   border:1px solid #0003;
   box-shadow: 1px 1px 2px #0003;
   background-color: white;
@@ -38,14 +38,10 @@ export const Label = styled.label`
   color: #676767;
 `;
 
-export const email = styled.label`
-  margin: 30px;
-  font-family: sans-serif;
 
-`;
-
-export const password = styled.div`
+export const FormControl = styled.div`
   margin-bottom: 30px;
+  font-family: sans-serif;
 `;
 
 export const InputGroup = styled.div`
