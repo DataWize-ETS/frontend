@@ -1,138 +1,237 @@
-import { Flex, Box, Center, FormControl, Input, FormLabel, HStack, Select, Button } from "@chakra-ui/react"
-
+import "./form.css";
+import {
+  ChakraProvider,
+  FormControl,
+  FormErrorMessage,
+  FormHelperText,
+  Textarea,
+  FormLabel,
+  Input,
+  extendTheme,
+  Box,
+  Select,
+} from "@chakra-ui/react";
+const activeLabelStyles = {
+  transform: "scale(0.85) translateY(-24px)",
+};
+export const theme = extendTheme({
+  components: {
+    Form: {
+      variants: {
+        floating: {
+          container: {
+            _focusWithin: {
+              label: {
+                ...activeLabelStyles,
+              },
+            },
+            "input:not(:placeholder-shown) + label, .chakra-select__wrapper + label, textarea:not(:placeholder-shown) ~ label":
+              {
+                ...activeLabelStyles,
+              },
+            label: {
+              top: 0,
+              left: 0,
+              zIndex: 2,
+              position: "absolute",
+              backgroundColor: "white",
+              pointerEvents: "none",
+              mx: 3,
+              px: 1,
+              my: 2,
+              transformOrigin: "left top",
+            },
+          },
+        },
+      },
+    },
+  },
+});
 
 function Form() {
-    return (
-        <Box minH={"100vh"} m={10}>
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-            <Flex
-                align="center"
-                justify="center"
-                bg="blackAlpha.200"
-                h="calc(100vh - 150px"
-            >
-                <Center
-                    w="100%"
-                    maxW={840}
-                    bg="white"
-                    top={100}
-                    position="absolute"
-                    borderRadius={5}
-                    p="6"
-                    boxShadow="0 1px 2px #ccc"
-                    m="5"
-                >
-                    <FormControl display="flex" flexDir="column" gap="4" >
+    console.log(e)
+  };
 
-                        <HStack>
-                            <Box w="100%">
-                                <FormLabel htmlFor="assigne">Assigne</FormLabel>
-                                <Input id="assigne" />
-                            </Box>
-                            <Box w="100%" style={{ display: "flex", flexDirection: "column" }}>
-                                <FormLabel htmlFor="dep">Department</FormLabel>
-                                <Select placeholder='Select option' id="dep">
-                                    <option value='option1'>Option 1</option>
-                                    <option value='option2'>Option 2</option>
-                                    <option value='option3'>Option 3</option>
-                                </Select>
-                            </Box>
-                        </HStack>
-                        <HStack >
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Description</FormLabel>
-                                <Input id="email" h={130} />
-                            </Box>
-                        </HStack>
-                        <HStack>
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Sumarry</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Due Data</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                        </HStack>
-                        <HStack>
-                            <Box w="100%">
-                                <FormLabel htmlFor="benefits">Major Benefits (id)</FormLabel>
-                                <Select placeholder='Select option' id="benefits">
-                                    <option value='option1'>Option 1</option>
-                                    <option value='option2'>Option 2</option>
-                                    <option value='option3'>Option 3</option>
-                                </Select>
-                            </Box>
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Estimated Hours</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                        </HStack>
-                        <HStack>
-                            <Box w="100%">
-                                <FormLabel htmlFor="email">Affect Entities</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Idea Source (id) </FormLabel>
-                                <Select placeholder='Select option'>
-                                    <option value='option1'>Option 1</option>
-                                    <option value='option2'>Option 2</option>
-                                    <option value='option3'>Option 3</option>
-                                </Select>
-                            </Box>
-                        </HStack>
-                        <HStack>
-                            <Box w="100%">
-                                <FormLabel htmlFor="source">Source Type (id)</FormLabel>
-                                <Select placeholder='Select option' id="source">
-                                    <option value='option1'>Option 1</option>
-                                    <option value='option2'>Option 2</option>
-                                    <option value='option3'>Option 3</option>
-                                </Select>
-                            </Box>
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Region</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                        </HStack>
-                        <HStack>
-                            <Box w="100%">
-                                <FormLabel htmlFor="email">Components</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Currency</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                        </HStack>
-                        <HStack>
-                            <Box w="100%">
-                                <FormLabel htmlFor="email">CipPex</FormLabel>
-                                <Input id="email" />
-                            </Box>
-                            <Box w="100%" >
-                                <FormLabel htmlFor="email">Priority</FormLabel>
-                                <Select placeholder='Select option'>
-                                    <option value='option1'>Option 1</option>
-                                    <option value='option2'>Option 2</option>
-                                    <option value='option3'>Option 3</option>
-                                </Select>
-                            </Box>
-                        </HStack>
-                        <Center>
-                            <Box>
-                                <Button w={240} p="6" type="submit" bg="green.400" color="white" fontWeight="bold" fontSize="xl" m="4" _hover={{ bg: "green.500" }}>Save Improve</Button>
-                            </Box>
-                        </Center>
+  return (
+    <ChakraProvider theme={theme}>
+      <form action="" method="post" onSubmit={e => handleSubmit(e)}>
+        <div className="row">
+          <div className="col-3">
+            <FormControl variant="floating" id="first-name">
+              <Input type="email" placeholder=" " h={14} className="input" id="email" name="email"/>
+              <FormLabel>Email</FormLabel>
+            </FormControl>
+          </div>
 
-                    </FormControl>
-                </Center>
-            </Flex>
-        </Box>
+          <div className="col-2">
+            <FormControl id="first-name">
+              <Select placeholder="Department" h={14} className="input" id="department" name="department">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </FormControl>
+          </div>
+
+          <div className="col-4">
+            <FormControl variant="floating" id="first-name">
+              <Input className="input" placeholder=" " h={14} border="" type="text" id="name" name="name"/>
+              <FormLabel>Name</FormLabel>
+            </FormControl>
+          </div>
+
+          <div className="col-3">
+            <FormControl id="first-name">
+              <Select placeholder="Region" h={14} className="input" id="region" name="region">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </FormControl>
+          </div>
+        </div>
+
+        <div className="textarea">
+          <div className="textare-input">
+            <FormControl id="first-name" variant="floating">
+              <Textarea className="input textarea-field" resize="None" h="" type="text" id="description" name="description"/>
+              <FormLabel>Description</FormLabel>
+            </FormControl>
+          </div>
+
+          <div className="rows">
+            <div className="row">
+              <div className="col-6">
+                <FormControl variant="floating" id="first-name">
+                  <Input placeholder=" " h={14} className="input" type="text" id="summary" name="summary"/>
+                  <FormLabel>Summary</FormLabel>
+                </FormControl>
+              </div>
+
+              <div className="col-6">
+                <FormControl variant="floating" id="first-name">
+                  <Input
+                    type="email"
+                    placeholder=" "
+                    h={14}
+                    className="input" id="dueDate" name="dueDate"/>
+                  <FormLabel>Due date</FormLabel>
+                </FormControl>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-6">
+                <FormControl variant="floating" id="first-name">
+                  <Input placeholder=" " h={14} className="input" type="text" id="cipPex" name="cipPex"/>
+                  <FormLabel>CipPex</FormLabel>
+                </FormControl>
+              </div>
+
+              <div className="col-6">
+                <FormControl variant="floating" id="first-name">
+                <Select placeholder="Region" h={14} className="input" id="region" name="region">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+                </FormControl>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
-    );
+        <div className="row">
+          <div className="col-3">
+            <FormControl variant="floating" id="first-name">
+                <Select placeholder="Source Type" h={14} className="input" id="sourceType" name="sourceType">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </FormControl>
+          </div>
+
+          <div className="col-2">
+            <FormControl id="first-name">
+              <Select placeholder="Idea Source" h={14} className="input" id="ideaSource" name="ideaSource"> 
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </FormControl>
+          </div>
+
+          <div className="col-4">
+            <FormControl variant="floating" id="first-name">
+              <Input className="input" type="number" placeholder=" " h={14} border="" min="0" id="currency" name="currency"/>
+              <FormLabel>Currency</FormLabel>
+            </FormControl>
+          </div>
+
+          <div className="col-3">
+            <FormControl id="first-name">
+              <Select placeholder="Priority" h={14} className="input" id="priority" name="priority">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </FormControl>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-2">
+            <FormControl variant="floating" id="first-name">
+            <Select placeholder="Major Benefits" h={14} className="input" id="majorBenefits" name="majorBenefits">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </FormControl>
+          </div>
+
+          <div className="col-3">
+            <FormControl id="first-name"  variant="floating">
+            <Input type="email" placeholder=" " h={14} className="input" id="affectEntities" name="affectEntities"/>
+              <FormLabel>Affects Entities</FormLabel>
+            </FormControl>
+          </div>
+
+          <div className="col-5">
+            <FormControl variant="floating" id="first-name">
+              <Input className="input" placeholder=" " h={14} border=""  id="components" name="components"/>
+              <FormLabel>Components</FormLabel>
+            </FormControl>
+          </div>
+
+          <div className="col-2">
+            <FormControl variant="floating" id="first-name">
+              <Input className="input" placeholder=" " h={14} border=""  id="process" name="process"/>
+              <FormLabel>Process</FormLabel>
+            </FormControl>
+          </div>
+
+        </div>
+
+        <div style={{"width":"100%"}}>
+          <div className="col-4">
+            <FormControl variant="floating" id="first-name">
+              <Input type="email" placeholder=" " h={14} className="input" />
+              <FormLabel>Current Organization</FormLabel>
+            </FormControl>
+          </div>
+
+        </div>
+
+        <button type="submit">Send Improvement</button>
+      </form>
+    </ChakraProvider>
+  );
 }
 
-export default Form
+export default Form;
