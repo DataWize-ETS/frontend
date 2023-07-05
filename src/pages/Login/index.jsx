@@ -1,13 +1,11 @@
 import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
 import * as C from "./styles";
-import { AuthContext } from '../../contexts/auth'
+import { AuthContext } from '../../contexts/auth';
 import { BiSolidUserCircle } from 'react-icons/bi'
 
 import emailIcon from "../../assets/ic_outline-email.png";
 import passw from "../../assets/material-symbols_lock-outline.png";
-
-
 
 const Signin = () => {
 
