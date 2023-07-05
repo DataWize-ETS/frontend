@@ -1,15 +1,15 @@
 import './Top.css'
 import { BiSolidUserCircle } from 'react-icons/bi'
 import { Tooltip } from '@chakra-ui/react'
-import img from '../../../assets/Logo-DataWise-png.png'
+import img from '../../../assets/world_logo.png'
 import {Link} from 'react-router-dom'
+import image from '../../../assets/back.svg'
 
 export default () => {
     return (
-        <>
-            <img className="supergraphic" />
-            <nav className="nav-main">
-
+        <nav>
+            <img alt="" style={{"background": `url(${image})`}} className='supergraphic'/>
+            <div className="nav-main">
                 <div className='brand'>
                     <img src={img} className='img-logo' alt="" />
                     <ul className='links-brand'>
@@ -24,8 +24,8 @@ export default () => {
                 <Tooltip label='Sing-in as admin' >
                     <button id='admin-button'><BiSolidUserCircle size={40} /></button>
                 </Tooltip>
-            </nav>
-        </>
+            </div>
+        </nav>
     )
 
 } 
