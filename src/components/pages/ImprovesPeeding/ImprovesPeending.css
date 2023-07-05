@@ -1,0 +1,65 @@
+.peeding-main{
+    width: 100%;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.improve-container{
+    width: 70%;
+    height: 180px;
+    margin-top: 15px;
+    border: 3px solid #999;
+    border-radius: 7px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.container-1{
+    display: inline-block;
+    height: 100%;
+
+}
+
+.container-2{
+    height: 100%;
+}
+.name-requester{
+    font-size: 25px;
+    font-weight: 600;
+}
+.summary{
+    font-weight: 500;
+    color:#333
+}
+
+.buttons{
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.btn{
+    width: 140px;
+    height: 31px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 5px ;
+}
+
+.btn-edit{
+    background-color: #2E7EB5;
+}
+.btn-approve{
+    background-color: #288C3F;
+}
+.peeding-status{
+    background-color: #D3CB00;
+    color: #333;
+    width: 161px;
+    height: 30px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 15px;
+}

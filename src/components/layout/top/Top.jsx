@@ -14,7 +14,7 @@ export default () => {
                     <img src={img} className='img-logo' alt="" />
                     <ul className='links-brand'>
                        
-                        <li><Link to="">Info Requester</Link></li>
+                        <li><Link to="/">Info Requester</Link></li>
                         <li><Link to="/improvement/new">New Request</Link></li>
                         <Link to="/improvement/pending"><li >Improvements Peeding*adm</li></Link>
                         
