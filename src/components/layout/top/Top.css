@@ -38,7 +38,18 @@
 .links-brand li{
     margin: 0 5px;
     cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 1px 0 1px #ffffff8c;
 }
+
+.links-brand li:hover{
+    
+    background: #0091fe;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .brand{
     display: flex;
 }
@@ -50,3 +61,4 @@
 #admin-button {
     margin-right: 30px;
 }
+

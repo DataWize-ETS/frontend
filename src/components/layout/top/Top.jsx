@@ -1,7 +1,7 @@
 import './Top.css'
 import { BiSolidUserCircle } from 'react-icons/bi'
 import { Tooltip } from '@chakra-ui/react'
-import img from '../../../assets/logo.svg'
+import img from '../../../assets/Logo-DataWise-png.png'
 import {Link} from 'react-router-dom'
 
 export default () => {

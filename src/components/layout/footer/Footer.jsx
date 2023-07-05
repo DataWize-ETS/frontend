@@ -21,8 +21,8 @@ export default () => {
                         <h3>Legal notice</h3>
                     </div>
                 </div>
+                <img className="supergraphic" />
             </footer>
-            <img className="supergraphic" />
         </>
     )
 }
