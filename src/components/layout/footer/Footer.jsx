@@ -1,6 +1,7 @@
 import { BiLogoInstagramAlt } from 'react-icons/bi'
 import { BsFacebook } from 'react-icons/bs'
 import { ImGoogle3 } from 'react-icons/im'
+import imagem from "../../../assets/footer-top-img.png"
 import './Footer.css'
 export default () => {
     return (
@@ -21,7 +22,7 @@ export default () => {
                         <h3>Legal notice</h3>
                     </div>
                 </div>
-                <img className="supergraphic" />
+                <img className="supergraphic" src={imagem} />
             </footer>
         </>
     )
