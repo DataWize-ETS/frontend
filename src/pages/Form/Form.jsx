@@ -6,13 +6,10 @@ import { toast } from "react-toastify";
 import {
   ChakraProvider,
   FormControl,
-  FormErrorMessage,
-  FormHelperText,
   Textarea,
   FormLabel,
   Input,
   extendTheme,
-  Box,
   Select,
 } from "@chakra-ui/react";
 const activeLabelStyles = {
