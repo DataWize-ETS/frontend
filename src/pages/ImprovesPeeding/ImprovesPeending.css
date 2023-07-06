@@ -34,10 +34,10 @@
 }
 
 .buttons{
-
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+    width: 380px;
 }
 .btn{
     width: 140px;
@@ -45,7 +45,7 @@
     font-size: 17px;
     font-weight: 600;
     color: #fff;
-    border-radius: 5px ;
+    border-radius: 5px;
 }
 
 .btn-edit{
