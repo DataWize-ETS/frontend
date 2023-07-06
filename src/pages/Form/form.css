@@ -6,6 +6,10 @@
     margin-bottom: 25px;
 }
 
+.row-unique{
+    width: 100%;
+}
+
 .rows{
     width: 100%;
 }
@@ -67,6 +71,11 @@ form button{
     padding: 15px 40px;
     font-weight: 500;
     font-size: 20px;
+    transition: all ease-in 0.3s;
+}
+
+form button:hover{
+    opacity: 0.9;
 }
 
 form .input{

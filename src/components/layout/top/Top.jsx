@@ -39,8 +39,8 @@ export default () => {
                         </Tooltip>
                 ) :
                     (
-                        <Tooltip label='Sing-in as admin' >
-                            <button id='admin-button'><BiSolidUserCircle size={40}/></button>
+                        <Tooltip label='Sing-in as admin'>
+                            <Link to="/login" id='admin-button'><BiSolidUserCircle size={40}/></Link>
                         </Tooltip>
                     )}
 

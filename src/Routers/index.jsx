@@ -15,7 +15,7 @@ function RoutesApp() {
         <Routes>
             <Route path='/'exact element={ <Public> <InfoRequester /> </Public> }/>
             <Route path='/login'exact element={ <Public> <Login /> </Public> }/>
-            <Route path='/improvement/new' element={<Public> <Form/> </Public> }/>
+            <Route path='/improvement/new' element={ <Form/> }/>
             <Route path="/improvement/pending" element={<Private> <ImprovesPeending/> </Private> }/>
 
 
