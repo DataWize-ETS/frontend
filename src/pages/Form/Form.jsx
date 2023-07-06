@@ -88,13 +88,14 @@ function Form() {
       console.log('erro')
     }
 
-  }, [departments, majorbenefits, ideaSources, sourceTypes]);
+  }, []);
 
   function loadDepartments() {
     api.get('/department/')
       .then((response) => {
         setDepartments(response.data)
       }).catch(e => {
+        console.log(e)
         toast.error('Não foi possível se conectar')
       })
   }
@@ -204,9 +205,9 @@ function Form() {
 
           <div className="col-2">
             <FormControl id="first-name">
-              <Select placeholder="Department" h={14} className="input" id="department" name="department" onChange={(e) => setDepartmentsValue(e.target.value)} value={departmentsValue}>
+              <Select placeholder="Department" h={14} className="input" id="department" name="department" onChange={(e) => setDepartmentsValue(e.target.value)} >
                 {departments.map((department, i) => {
-                  return <option key={i} value={department.id}>{department.name}</option>
+                  return <option key={i} value={department.departmentId}>{department.name}</option>
                 })}
               </Select>
             </FormControl>
@@ -280,9 +281,9 @@ function Form() {
         <div className="row">
           <div className="col-3">
             <FormControl variant="floating" id="first-name">
-              <Select placeholder="Source Type" h={14} className="input" id="sourceType" name="sourceType" onChange={(e) => setSourceTypesValue(e.target.value)} value={sourceTypesValue}>
+              <Select placeholder="Source Type" h={14} className="input" id="sourceType" name="sourceType" onChange={(e) => setSourceTypesValue(e.target.value)} value={sourceTypesValue} /*multiple={true}*/>
                 {sourceTypes.map((sourcetype, i) => {
-                  return <option key={i} value={sourcetype.id}>{sourcetype.name}</option>
+                  return <option key={i} value={sourcetype.sourceTypeId}>{sourcetype.name}</option>
                 })}
               </Select>
             </FormControl>
@@ -290,9 +291,9 @@ function Form() {
 
           <div className="col-2">
             <FormControl id="first-name">
-              <Select placeholder="Idea Source" h={14} className="input" id="ideaSource" name="ideaSource" onChange={(e) => setIdeaSourcesValue(e.target.value)} value={ideaSourcesValue}>
+              <Select placeholder="Idea Source" h={14} className="input" id="ideaSource" name="ideaSource" onChange={(e) => setIdeaSourcesValue(e.target.value)} value={ideaSourcesValue} >
                 {ideaSources.map((ideasource, i) => {
-                  return <option key={i} value={ideasource.id}>{ideasource.name}</option>
+                  return <option key={i} value={ideasource.ideaSourceId}>{ideasource.name}</option>
                 })}
               </Select>
             </FormControl>
@@ -308,9 +309,9 @@ function Form() {
           <div className="col-3">
             <FormControl id="first-name">
               <Select placeholder="Priority" h={14} className="input" id="priority" name="priority" onChange={(e) => setPriority(e.target.value)} value={priority}>
-                <option value={1}>Minor</option>
-                <option value={2}>Medium</option>
-                <option value={3}>Essential</option>
+                <option value="1">Minor</option>
+                <option value="2">Medium</option>
+                <option value="3">Essential</option>
               </Select>
             </FormControl>
           </div>
@@ -319,9 +320,9 @@ function Form() {
         <div className="row">
           <div className="col-2">
             <FormControl variant="floating" id="first-name">
-              <Select placeholder="Major Benefits" h={14} className="input" id="majorBenefits" name="majorBenefits" onChange={(e) => setMajorBenefitsValue(e.target.value)} value={majorbenefitsValue}>
+              <Select placeholder="Major Benefits" h={14} className="input" id="majorBenefits" name="majorBenefits" onChange={(e) => setMajorBenefitsValue(e.target.value)} value={majorbenefitsValue} >
                 {majorbenefits.map((majorbenefit, i) => {
-                  return <option key={i} value={majorbenefit.id}>{majorbenefit.name}</option>
+                  return <option key={i} value={majorbenefit.majorBenefitsid}>{majorbenefit.name}</option>
                 })}
               </Select>
             </FormControl>
