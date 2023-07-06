@@ -1,6 +1,7 @@
 import "./form.css";
 import { useEffect, useState } from "react";
-import api from '../../../services/api'
+import api from '../../services/api'
+import { toast } from "react-toastify";
 
 import {
   ChakraProvider,
@@ -54,29 +55,46 @@ function Form() {
   const [ideaSources, setIdeaSources] = useState([])
   const [sourceTypes, setSourceTypes] = useState([])
   useEffect(() => {
-    loadDepartments()
-    loadMajorBenefits()
-    loadIdeaSources()
-    loadSourceTypes()
+
+    try {
+      loadDepartments()
+      loadMajorBenefits()
+      loadIdeaSources()
+      loadSourceTypes()
+    } catch (e) {
+      console.log('erro')
+    }
+
   }, [departments, majorbenefits, ideaSources, sourceTypes])
 
   function loadDepartments() {
     api.get('/department/')
       .then((response) => {
         setDepartments(response.data)
+      }).catch(e => {
+        toast.error('Não foi possível se conectar')
       })
   }
   function loadMajorBenefits() {
     api.get('/majorbenefits/')
       .then((res) => setMajorBenefits(res.data))
+      .catch(e => {
+        toast.error('Não foi possível se conectar')
+      })
   }
   function loadIdeaSources() {
     api.get('/ideasource/')
       .then((res) => setIdeaSources(res.data))
+      .catch(e => {
+        toast.error('Não foi possível se conectar')
+      })
   }
   function loadSourceTypes() {
     api.get('/sourcetype/')
       .then((res) => setSourceTypes(res.data))
+      .catch(e => {
+        toast.error('Não foi possível se conectar')
+      })
   }
 
 
@@ -141,11 +159,13 @@ function Form() {
 
               <div className="col-6">
                 <FormControl variant="floating" id="first-name">
+
                   <Input
-                    type="email"
-                    placeholder=" "
-                    h={14}
-                    className="input" id="dueDate" name="dueDate" />
+                    placeholder="Select Date and Time"
+                    size="md"
+                    type="date" h={14}
+                    className="input" id="dueDate" name="dueDate"
+                  />
                   <FormLabel>Due date</FormLabel>
                 </FormControl>
               </div>
