@@ -43,10 +43,9 @@ function AuthProvider({ children }) {
 
         const response = await axios.post('/user/login', form_data)
             .then(async (value) => {
-                const token = value.data.token
+                const token = value.data.access_token
                 setUser(value.data.user)
                 storageUser(value.data.user)
-                console.log(token)
                 localStorage.setItem("@bearer", token)
                 setLoadingAuth(false)
                 toast.success('Bem-vindo(a) de volta!')
