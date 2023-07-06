@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import api from '../../services/api';
 import { toast } from "react-toastify";
 import axios from '../../services/api';
+import Title from '../../components/Title';
 
 import {
   ChakraProvider,
@@ -191,6 +192,7 @@ function Form() {
 
   return (
     <ChakraProvider theme={theme}>
+      <Title name="New Improvement"></Title>
       <form action="" method="post" onSubmit={e => handleSubmit(e)}>
         <div className="row">
           <div className="col-3">

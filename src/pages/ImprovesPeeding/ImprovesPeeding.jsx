@@ -1,7 +1,12 @@
 import  './ImprovesPeending.css'
+import Title from '../../components/Title';
+
 export default () =>{
     return(
-        <div className="peeding-main">
+        <>
+            <Title name="Improvements"></Title>
+
+            <div className="peeding-main">
             <div className="improve-container">
                    <div className='container-1'>
                         <h1 className='name-requester'>Name Requester / Department</h1>
@@ -45,6 +50,7 @@ export default () =>{
                    </div>
             </div>
         </div>
-
+        
+        </>
     )
 }
