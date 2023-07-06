@@ -1,5 +1,4 @@
 import  './ImprovesPeending.css'
-import { Button } from '@chakra-ui/react'
 export default () =>{
     return(
         <div className="peeding-main">

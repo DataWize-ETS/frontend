@@ -7,13 +7,10 @@ import axios from '../../services/api';
 import {
   ChakraProvider,
   FormControl,
-  FormErrorMessage,
-  FormHelperText,
   Textarea,
   FormLabel,
   Input,
   extendTheme,
-  Box,
   Select,
 } from "@chakra-ui/react";
 const activeLabelStyles = {
