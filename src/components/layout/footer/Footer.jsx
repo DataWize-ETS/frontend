@@ -1,11 +1,7 @@
 import { BiLogoInstagramAlt } from 'react-icons/bi'
 import { BsFacebook } from 'react-icons/bs'
 import { ImGoogle3 } from 'react-icons/im'
-<<<<<<< HEAD
-import imagem from "../../../assets/footer-top-img.png"
-=======
-import image from '../../../assets/back.svg'
->>>>>>> da2d749fd29f8185d4d0afdf709cb42aa67b1ff5
+import line from '../../../assets/line-footer-top.png'
 import './Footer.css'
 export default () => {
     return (
@@ -26,11 +22,8 @@ export default () => {
                         <h3>Legal notice</h3>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <img className="supergraphic" src={imagem} />
-=======
-                <img style={{"background": `url(${image})`}} className='supergraphic'/>
->>>>>>> da2d749fd29f8185d4d0afdf709cb42aa67b1ff5
+                <img className='supergraphic' src={line}/>
+
             </footer>
         </>
     )

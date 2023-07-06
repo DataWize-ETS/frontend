@@ -1,10 +1,7 @@
 import './Home.css';
-import logoText from "../../../assets/logan-text.png";
+import logoText from "../../assets/logan-text.png";
 import { Button } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
-import ReactLogo from '../../../assets/React-icon.svg.png'
-import ChakraLogo from '../../../assets/chakra-logo.png'
-import FastApiLogo from '../../../assets/fastapi-logo.png'
 
 export default () => {
     return (
