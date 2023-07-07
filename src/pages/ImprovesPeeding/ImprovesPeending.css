@@ -1,65 +1,109 @@
-.peeding-main{
+.improvements--container{
     width: 100%;
-    padding: 0 80px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
-.improve-container{
-    width: 70%;
-    height: 180px;
-    margin-top: 15px;
-    border: 3px solid #999;
-    border-radius: 7px;
-    padding: 10px;
+
+.improvement-cart{
+    border: 1px solid #54545480;
+    border-radius: 5px;
     display: flex;
-    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    align-items: start;
+    gap: 20px;
+    max-width: 1350px;
 }
-.container-1{
-    display: inline-block;
-    height: 100%;
 
+.improvement--header img{
+    width: 65px;
 }
 
-.container-2{
-    height: 100%;
+.improvement--body{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
-.name-requester{
-    font-size: 25px;
+
+.improvement--title{
+    font-size: 1.18rem;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+}
+
+.improvement--title span{
+    color: #1f1f1fde;
+}
+
+.signature{
     font-weight: 600;
 }
+
+.department{
+    font-weight: 600;
+}
+
 .summary{
+    margin-top: -4px;
+    font-size: 1rem;
+}
+
+.dueDate{
+    font-size: 0.7rem;
+    color: #000;
     font-weight: 500;
-    color:#333
 }
 
 .buttons{
+    margin-top: 15px;
     display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    width: 380px;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
 }
+
+.improvement--footer .status{
+    background: #D3CB00;
+    padding: 5px 20px;
+    color: #3b3b3b;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
 .btn{
-    width: 140px;
-    height: 31px;
-    font-size: 17px;
-    font-weight: 600;
-    color: #fff;
+    border: 1px solid #000;
+    padding: 5px 12px;
     border-radius: 5px;
+    font-size: 15px;
+    width: 156px;
+    transition: all ease 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn:hover{
+    opacity: 0.9;
 }
 
 .btn-edit{
     background-color: #2E7EB5;
+    border: none;
+    color: #FFF;
 }
+
 .btn-approve{
     background-color: #288C3F;
-}
-.peeding-status{
-    background-color: #D3CB00;
-    color: #333;
-    width: 161px;
-    height: 30px;
-    text-align: center;
-    font-weight: 600;
-    border-radius: 15px;
+    border: none;
+    color: #FFF;
 }
