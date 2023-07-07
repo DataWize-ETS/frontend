@@ -1,10 +1,14 @@
+body{
+    overflow-x: none;
+}
+
 .improvements--container{
     width: 100%;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    min-height: 510px
+    min-height: 510px;
 }
 
 .improvement-cart{
@@ -17,6 +21,7 @@
     align-items: start;
     gap: 20px;
     max-width: 1350px;
+    margin-bottom: 15px;
 }
 
 .improvement--header img{

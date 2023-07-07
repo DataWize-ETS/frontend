@@ -7,7 +7,10 @@ export default () => {
     return (
         <div className="home-main">
             <div className='top-info'>
-                <h1>Create patterned designs easy! this is not magic, this is <img id='text-logo' src={logoText} alt="Text logo" /></h1>
+                <div className="info">
+                <h1>Create patterned designs easy! this is not magic, this is</h1>
+                <img id='text-logo' src={logoText} alt="Text logo" />
+                </div>
                 <Link id="link" to="/info-requester"><Button className='get-started'
                     p={6}
                     w={100}
