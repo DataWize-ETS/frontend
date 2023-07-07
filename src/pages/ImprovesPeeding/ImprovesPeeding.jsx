@@ -7,9 +7,12 @@ import { AiOutlineCheckCircle } from 'react-icons/ai'
 import { TbEdit } from 'react-icons/tb'
 import axios from '../../services/api';
 import 'animate.css';
+import { redirect, useNavigate   } from 'react-router-dom';
 
 export default () => {
+    let navigate = useNavigate();
     const [improvementsPending, setImprovementsPending] = useState([])
+   
 
     useEffect(() => {
         async function loadImprovementsPeending(){
@@ -18,7 +21,7 @@ export default () => {
                 setImprovementsPending(response.data)
                 localStorage.setItem('improvements', JSON.stringify(response.data))
             }).catch(e => {
-                toast.error('Não foi possível se conectar')
+                // toast.error('Não foi possível se conectar')
             })
         }
         loadImprovementsPeending()
@@ -37,6 +40,10 @@ export default () => {
 
         const formatDate = `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
         return formatDate
+    }
+
+    function handleEdit(id) {
+        return navigate(`/improvement/new/${id}`)
     }
 
     const handleDelete = useCallback((id) => {
@@ -64,7 +71,7 @@ export default () => {
         ).then(
             toast.success('Request Approved')
         ).catch(e => {
-            toast.error('Ops!')
+            // toast.error('Ops!')
         });
     }
     return (
@@ -84,7 +91,7 @@ export default () => {
                                <div className="summary"> {improve.summary} </div>
                                <div className="dueDate">{formatDate(improve.dueDate)}</div>
                                <div className="buttons">
-                                <button className="btn btn-edit"> <TbEdit color='#FFF' size={24}/> See and Edit</button>
+                                <button className="btn btn-edit" onClick={() => handleEdit(improve.improvementId)}>  <TbEdit color='#FFF' size={24}/> See and Edit</button>
                                 <button className="btn btn-approve" onClick={() => handleApprove(improve.improvementId)}> <AiOutlineCheckCircle color='#FFF' size={24}/> Approve Now</button>
                                 </div> 
                             </div>

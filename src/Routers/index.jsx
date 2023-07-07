@@ -17,8 +17,9 @@ function RoutesApp() {
             <Route path='/'exact element={ <Public> <Home /> </Public> }/>
             <Route path='/info-requester'exact element={ <Public> <InfoRequester /> </Public> }/>
             <Route path='/login'exact element={ <Public> <Login /> </Public> }/>
-            <Route path='/improvement/new' element={ <Form/> }/>
             <Route path="/improvement/pending" element={<Private> <ImprovesPeending/> </Private> }/>
+            <Route path='/improvement/new' element={ <Form/> }/>
+            <Route path='/improvement/new/:id' element={ <Private> <Form/> </Private> }/>
 
 
             <Route path="*" element={ <Page404/> }/>

@@ -3,7 +3,8 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+    min-height: 510px
 }
 
 .improvement-cart{
